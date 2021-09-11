@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/clientes/update-client",
+      "handler": "cliente.updateClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clientes/getProfile",
+      "handler": "cliente.getProfile",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/clientes",
       "handler": "cliente.find",

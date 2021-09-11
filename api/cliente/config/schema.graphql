@@ -1,0 +1,36 @@
+module.exports = {
+    definition: `        
+        type getOwnerProfile{
+            cliente:Cliente!
+        }
+        input UpdateInfoClientInput{
+            cliente:ClienteCustomize
+        }
+   
+        input ClienteCustomize{
+            nombre:String
+            telefono:String
+            dni:String
+        }
+    `,
+    query:`
+        getProfile:getOwnerProfile!
+    `,
+    mutation:`
+        updateClientProfile(input:UpdateInfoClientInput):Cliente!
+    `,
+    resolver: {
+        Query:{
+            getProfile:{
+                description:'Get profile customer',
+                resolver:'application::cliente.cliente.getProfile'
+            }
+        },
+        Mutation:{
+             updateClientProfile:{
+                description:'Update a client',
+                resolver:'application::cliente.cliente.updateClient'
+            },
+        }
+    }
+}

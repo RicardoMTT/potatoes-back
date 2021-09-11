@@ -43,6 +43,12 @@
     },
     "fechaNacimiento": {
       "type": "date"
+    },
+    "dni": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "biginteger"
     }
   }
 }
